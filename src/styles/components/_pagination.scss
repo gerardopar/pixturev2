@@ -1,0 +1,80 @@
+.pagination{
+    align-items: center;
+    background-color: $off-white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 100%;
+
+    &__wrap{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 50%;
+    }
+
+    &__btn--prev,
+    &__btn--next{
+        background: none;
+        background-color: transparent !important;
+        border: none;
+        color: $navy;
+        cursor: pointer;
+        font-size: 1.6rem;
+    }
+
+    &__num--current{
+        background-color: rgb(80, 92, 151);
+        border: solid 2px rgb(80, 92, 151);
+        border-radius: 50%;
+        color: $off-white;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        padding: 12px 16px;
+    }
+}
+
+@media (max-width: 374.98px) and (orientation: portrait) {
+    .pagination{
+    
+        &__wrap{
+            width: 75%;
+        }
+
+        &__btn--prev,
+        &__btn--next{
+            background: none;
+            background-color: transparent !important;
+            border: none;
+            color: $navy;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+    }
+}
+
+@media (min-width: 375px) and (max-width: 413.98px) and (orientation: portrait) {
+    .pagination{
+    
+        &__wrap{
+            width: 75%;
+        }
+
+    }
+}
+
+@media (min-width: 414px) and (max-width: 575.98px) and (orientation: portrait) {
+    .pagination{
+    
+        &__wrap{
+            width: 75%;
+        }
+
+    }
+}

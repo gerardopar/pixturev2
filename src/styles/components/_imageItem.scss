@@ -1,0 +1,110 @@
+.imageItem {
+    height: 300px;
+    width: 30%;
+    margin: 10px;
+    
+    &__img{
+        filter: brightness(80%);
+        -webkit-filter: brightness(80%);
+        height: 100%;
+        transition: all 1s ease-out;
+        -webkit-transition: all 1s ease-out;
+        -moz-transition: all 1s ease-out;
+        -ms-transition: all 1s ease-out;
+        -o-transition: all 1s ease-out;
+        width: 100%;
+        &:hover{
+            cursor: pointer;
+            filter: brightness(120%);
+            -webkit-filter: brightness(120%);
+        }
+    }
+}
+
+.imageItemPortrait {
+    height: 550px;
+    width: 30%;
+    margin: 10px;
+    
+    &__img{
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 374.98px) and (orientation: portrait) {
+    .imageItem,
+    .imageItemPortrait {
+        margin: 10px;
+        width: 100%;
+    }
+
+    .imageItemPortrait{
+        height: 600px;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 413.98px) and (orientation: portrait) {
+    .imageItem,
+    .imageItemPortrait {
+        margin: 10px;
+        width: 100%;
+    }
+
+    .imageItemPortrait{
+        height: 600px;
+    }
+}
+
+@media (min-width: 414px) and (max-width: 575.98px) and (orientation: portrait) {
+    .imageItem,
+    .imageItemPortrait {
+        margin: 10px;
+        width: 100%;
+    }
+
+    .imageItemPortrait{
+        height: 600px;
+    }
+}
+
+@media (max-width: 575.98px) and (orientation: landscape){
+    .imageItem,
+    .imageItemPortrait {
+        margin: 10px;
+        width: 100%;
+    }
+
+    .imageItemPortrait{
+        height: 600px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .imageItem,
+    .imageItemPortrait {
+        margin: 5px;
+        width: 48%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .imageItem,
+    .imageItemPortrait {
+        margin: 5px;
+        width: 48%;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .imageItem,
+    .imageItemPortrait {
+        width: 31%;
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}

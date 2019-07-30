@@ -1,0 +1,142 @@
+.searchPage{
+    background-color: $off-white;
+    height: 100vh;
+    position: relative;
+    width: 100%;
+
+    &__header{
+        align-items: center;
+        display: flex;
+        background-color: $navy;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 12px 16px;
+        width: 100%;
+    }
+
+    &__col--one{
+        align-items: center;
+        display: flex;
+        flex: 1;
+        justify-content: flex-start;
+    }
+    &__title{
+        color: $off-white;
+    }
+    &__logo--img{
+        height: 30px;
+        margin-right: 10px;
+        width: 30px;
+    }
+
+    &__form{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-left: 30px;
+        width: 100%;
+
+        &--input{
+            background-color: rgb(218, 218, 218) !important;
+            height: 40px !important;
+            border-bottom: none !important;
+            padding-left: 15px !important;
+
+            &::placeholder{
+                color: rgb(155, 155, 155) !important;
+            }
+            /* label underline focus color */
+            &:focus {
+                border-bottom: none !important;
+                box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0) !important;
+            }
+        }
+
+        &--btn{
+            background-color: rgb(218, 218, 218) !important;
+            border: none;
+            color: rgb(155, 155, 155);
+            cursor: pointer;
+            height: 40px !important;
+            padding: 6px;
+            margin-bottom: 8px !important;
+        }
+    }
+
+    &__col--two{
+        align-items: center;
+        display: flex;
+        width: 40%;
+        justify-content: flex-end;
+    }
+    .searchPage__signup{
+        border: none;
+        border: solid 1px rgb(80, 92, 151);
+        padding: 12px 16px;
+        color: $off-white;
+
+            &:hover{
+                background-color: rgb(80, 92, 151);
+            }
+    }
+    .searchPage__login{
+        background-color: rgb(34, 41, 78);
+        border: none;
+        padding: 12px 16px;
+        color: $off-white;
+        margin-right: 10px;
+
+            &:hover{
+                background-color: rgb(22, 30, 66);
+            }
+    }
+
+}
+
+@media (max-width: 374.98px) and (orientation: portrait) {
+    .searchPage{
+        &__form{
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 375px) and (max-width: 413.98px) and (orientation: portrait) {
+    .searchPage{
+        &__form{
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 414px) and (max-width: 575.98px) and (orientation: portrait) {
+    .searchPage{
+        &__form{
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 575.98px) and (orientation: landscape){
+    .searchPage{
+        &__col--two{
+            width: 50%;
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .searchPage{
+        &__col--two{
+            width: 50%;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .searchPage{
+        &__col--two{
+            width: 50%;
+        }
+    }
+}

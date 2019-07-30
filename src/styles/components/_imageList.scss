@@ -1,0 +1,54 @@
+.imageList{
+    align-items: center;
+    background-color: $off-white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-left: 80px;
+    padding-top: 10px;
+    width: 100%;
+}
+
+@media (max-width: 374.98px) and (orientation: portrait) {
+    .imageList{
+        padding-left: 0px;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 413.98px) and (orientation: portrait) {
+    .imageList{
+        padding-left: 0px;
+    }
+}
+
+@media (min-width: 414px) and (max-width: 575.98px) and (orientation: portrait) {
+    .imageList{
+        padding-left: 0px;
+    }
+}
+
+@media (max-width: 575.98px) and (orientation: landscape){
+    .imageList{
+        padding-left: 0px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .imageList{
+        padding-left: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .imageList{
+        padding-left: 10px;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .imageList{
+        padding-left: 10px;
+    }
+}

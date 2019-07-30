@@ -1,0 +1,62 @@
+.mbs{
+    display: none;
+}
+
+.mobileSearchBar{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+
+    &__form{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        &--input{
+            background-color: rgb(218, 218, 218) !important;
+            height: 40px !important;
+            border-bottom: none !important;
+            padding-left: 15px !important;
+
+            &::placeholder{
+                color: rgb(155, 155, 155) !important;
+            }
+            /* label underline focus color */
+            &:focus {
+                border-bottom: none !important;
+                box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0) !important;
+            }
+        }
+
+        &--btn{
+            background-color: rgb(218, 218, 218) !important;
+            border: none;
+            color: rgb(155, 155, 155);
+            cursor: pointer;
+            height: 40px !important;
+            padding: 6px;
+            margin-bottom: 8px !important;
+        }
+    }
+}
+
+@media (max-width: 374.98px) and (orientation: portrait) {
+    .mbs{
+        display: block;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 413.98px) and (orientation: portrait) {
+    .mbs{
+        display: block;
+    }
+}
+
+@media (min-width: 414px) and (max-width: 575.98px) and (orientation: portrait) {
+    .mbs{
+        display: block;
+    }
+}

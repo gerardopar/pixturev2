@@ -1,0 +1,283 @@
+.hero{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 65vh;
+    position: relative;
+
+    &__nav{
+        align-items: center;
+        background-color: transparent;
+        color: $off-white;
+        display: flex;
+        height: 8vh;
+        justify-content: space-between;
+        padding: 12px 16px;
+        width: 100%;
+
+        &--logo--wrap{
+            align-items: center;
+            display: flex;
+        }
+        &--logo--img{
+            height: 30px;
+            margin-right: 10px;
+            width: 30px;
+        }
+
+        &--login{
+                background-color: rgb(34, 41, 78);
+                border: none;
+                padding: 12px 16px;
+                color: $off-white;
+                margin-right: 10px;
+        
+                    &:hover{
+                        background-color: rgb(22, 30, 66);
+                    }
+            }
+        &--signup{
+            border: none;
+            border: solid 1px rgb(80, 92, 151);
+            padding: 12px 16px;
+            color: $off-white;
+
+                &:hover{
+                    background-color: rgb(80, 92, 151);
+                }
+        }
+    
+        }
+
+    &__title--container{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    &__title--wrap{
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 12px;
+        text-align: left;
+        width: 60%;
+    }
+    &__title{
+        color: $off-white;
+        font-size: 2rem;
+        font-weight: 600;
+        padding-top: 50px;
+    }
+
+    &__form--wrap{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    &__form{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 60%;
+
+        &--input{
+            background-color: rgb(218, 218, 218) !important;
+            border-bottom: none !important;
+            padding-left: 15px !important;
+
+            &::placeholder{
+                color: rgb(155, 155, 155) !important;
+            }
+            /* label underline focus color */
+            &:focus {
+                border-bottom: none !important;
+                box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0) !important
+            }
+        }
+
+        &--btn{
+            background-color: rgb(218, 218, 218) !important;
+            border: none;
+            color: rgb(155, 155, 155);
+            cursor: pointer;
+            height: 3rem;
+            padding: 12px;
+            margin-bottom: 8px !important;
+        }
+        
+    }
+
+    &__suggest--container{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    &__suggest--wrap{
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 12px;
+        text-align: right;
+        width: 60%;
+    }
+    &__suggest{
+        color: $off-white;
+        cursor: default;
+        font-size: 1rem;
+
+        &--link{
+            color: rgba(189, 189, 189, 0.692);
+            transition: all .5s ease-in;
+            -webkit-transition: all .5s ease-in;
+            -moz-transition: all .5s ease-in;
+            -ms-transition: all .5s ease-in;
+            -o-transition: all .5s ease-in;
+
+            &:hover{
+                color: $off-white;
+            }
+        }
+    }
+}
+
+@media (max-width: 374.98px) and (orientation: portrait) {
+    .hero{
+        height: 60vh;
+
+        &__nav{
+            padding-top: 25px;
+        }
+
+        &__title--wrap{
+            padding-left: 2px;
+            text-align: left;
+            width: 90%;
+        }
+        &__title{
+            font-size: 2.2rem;
+            padding-top: 5px;
+        }
+        &__form{
+            width: 90%;
+        }
+        &__suggest--wrap{
+            justify-content: center;
+            width: 100%;
+        }
+        &__suggest{
+            font-size: .80rem;
+        }
+    }
+}
+
+@media (min-width: 375px) and (max-width: 413.98px) and (orientation: portrait) {
+    .hero{
+        height: 60vh;
+
+        &__nav{
+            padding-top: 25px;
+        }
+
+        &__title--wrap{
+            padding-left: 2px;
+            text-align: left;
+            width: 90%;
+        }
+        &__title{
+            font-size: 2.2rem;
+            padding-top: 20px;
+        }
+        &__form{
+            width: 90%;
+        }
+        &__suggest--wrap{
+            justify-content: center;
+            width: 100%;
+        }
+        &__suggest{
+            font-size: .95rem;
+        }
+    }
+}
+
+@media (min-width: 414px) and (max-width: 575.98px) and (orientation: portrait) {
+    .hero{
+        height: 60vh;
+
+        &__nav{
+            padding-top: 25px;
+        }
+
+        &__title--wrap{
+            padding-left: 2px;
+            text-align: left;
+            width: 90%;
+        }
+        &__title{
+            font-size: 2.2rem;
+            padding-top: 20px;
+        }
+        &__form{
+            width: 90%;
+        }
+        &__suggest--wrap{
+            justify-content: center;
+            width: 100%;
+        }
+        &__suggest{
+            font-size: .95rem;
+        }
+    }
+}
+
+@media (max-width: 575.98px) and (orientation: landscape){
+    .hero{
+        height: 80vh;
+
+        &__nav{
+            padding-top: 25px;
+        }
+
+        &__title{
+            font-size: 1.2rem;
+            padding-top: 10px;
+        }
+
+        &__suggest--container{
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .hero{
+        height: 80vh;
+
+        &__nav{
+            padding-top: 25px;
+        }
+
+        &__title{
+            font-size: 1.6rem;
+            padding-top: 10px;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .hero{
+        height: 85vh;
+
+        &__nav{
+            padding-top: 25px;
+        }
+
+        &__title{
+            font-size: 1.6rem;
+            padding-top: 20px;
+        }
+    }
+}
