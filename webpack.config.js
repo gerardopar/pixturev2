@@ -3,8 +3,6 @@ const path = require('path'); // * absolute path
 
 // * importing plugins
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // * generates a css file
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // * generates an html file
-const CleanWebpackPlugin = require('clean-webpack-plugin'); // * cleans unused files in the build directory
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // * minifies css
 const TerserPlugin = require('terser-webpack-plugin'); // * minifies javascript
 
@@ -35,8 +33,6 @@ module.exports = {
                 test: /\.scss$/,  // tests for a sass file
                 use: [
                     MiniCssExtractPlugin.loader, // compiles CSS into a seperate file
-                    // ! remove style-loader if using miniCssExtractPlugin
-                    // { loader: "style-loader" }, // injects CSS into the DOM
                     { loader: "css-loader" }, // translates CSS into CommonJS
                     { loader: "sass-loader" } // compiles Sass to CSS, using Node Sass by default
                     ]
@@ -59,19 +55,7 @@ module.exports = {
         new MiniCssExtractPlugin({ // generates a css file
             filename: "[name].css",
             chunkFilename: "[id].css",
-        }),
-        // // ! remove htmlWebpackPlugin if building a site using plain html
-        // new HtmlWebpackPlugin({ // generates an html file with bundles injected
-        //     title: "Pixture",
-        //     favicon: "./src/assets/img/favicon.png",
-        //     template: "./src/assets/template/index.html",
-        //     minify: {
-        //         removeAttributeQuotes: false,
-        //         collapseWhitespace: true,
-        //         removeComments: true
-        //     }
-        // }),
-        // new CleanWebpackPlugin(), // cleans unused files in the build directory
+        })
     ],
     // # development
     devServer: { // webpack development server
