@@ -13,7 +13,7 @@ export const setImagesAsync = () => { // # async action
     }
 }
 // # sync action
-export const setImages = (images) => { // set breakingNews via the async logic
+export const setImages = (images) => {
     return {
         type: 'SET_IMAGES',
         images: [...images]
@@ -21,7 +21,7 @@ export const setImages = (images) => { // set breakingNews via the async logic
 };
 
 // # sync action
-export const setOpenModal = (imgUrl, height, width, user, views, likes) => { // set breakingNews via the async logic
+export const setOpenModal = (imgUrl, height, width, user, views, likes) => {
     return {
         type: 'SET_OPEN_MODAL',
         imgUrl,
@@ -34,7 +34,7 @@ export const setOpenModal = (imgUrl, height, width, user, views, likes) => { // 
 };
 
 // # sync action
-export const setCloseModal = () => { // set breakingNews via the async logic
+export const setCloseModal = () => {
     return {
         type: 'SET_CLOSE_MODAL',
     }

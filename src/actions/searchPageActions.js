@@ -20,7 +20,7 @@ export const setImagesAsync = (query, parsedPageQuery) => { // # async action
     }
 }
 // # sync action
-export const setImages = (images) => { // set breakingNews via the async logic
+export const setImages = (images) => {
     return {
         type: 'SET_IMAGES',
         images: [...images]
@@ -49,14 +49,14 @@ export const setImagesSearchedAsync = (query, parsedPageQuery) => { // # async a
     }
 }
 // # sync action
-export const setImagesSearched = (images) => { // set breakingNews via the async logic
+export const setImagesSearched = (images) => {
     return {
         type: 'SET_IMAGES_SEARCHED',
         images: [...images]
     }
 };
 
-export const setPaginationAsync = (query, parsedPageQuery) => { // # async action
+export const setPaginationAsync = (query, parsedPageQuery) => {
     return (dispatch, getState) => {
         return fetch(`https://pixture.herokuapp.com/postImageQuery`, {
             method: 'POST',
@@ -86,7 +86,7 @@ export const setPagination = (images) => {
 }
 
 // # sync action
-export const setOpenModal = (imgUrl, height, width, user, views, likes) => { // set breakingNews via the async logic
+export const setOpenModal = (imgUrl, height, width, user, views, likes) => {
     return {
         type: 'SET_OPEN_MODAL',
         imgUrl,
@@ -99,7 +99,7 @@ export const setOpenModal = (imgUrl, height, width, user, views, likes) => { // 
 };
 
 // # sync action
-export const setCloseModal = () => { // set breakingNews via the async logic
+export const setCloseModal = () => {
     return {
         type: 'SET_CLOSE_MODAL',
     }
