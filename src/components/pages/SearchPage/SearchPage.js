@@ -1,13 +1,16 @@
 // importing modules
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import queryString from 'query-string';
 // importing redux actions
-import { setImagesAsync, setOpenModal, 
-        setCloseModal, setImagesSearchedAsync, setPaginationAsync }  from '../../../actions/searchPageActions';
+import {
+ setImagesAsync, setOpenModal, 
+        setCloseModal, setImagesSearchedAsync, setPaginationAsync 
+} from '../../../actions/searchPageActions';
 
 // importing components
-import SearchHeader from '../SearchPage/SearchHeader/SearchHeader';
+import SearchHeader from './SearchHeader/SearchHeader';
 import ImageList from '../../UI/ImageList/ImageList';
 import ImageModal from '../../UI/ImageModal/ImageModal';
 import Pagination from '../../UI/pagination/Pagination';
@@ -15,15 +18,15 @@ import MobileSearchBar from '../../UI/mobile/MobileSearchBar';
 import Spinner from '../../UI/spinner/Spinner';
 
 class SearchPage extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             page: 1,
             tag: '' 
-        }
+        };
     }
 
-    componentDidMount(){
+    componentDidMount() {
         const imageSearched = this.props.match.params.image;
         const parsedPageQuery = queryString.parse(this.props.location.search);
 
@@ -45,8 +48,8 @@ class SearchPage extends Component {
         this.setState({ page: 1, tag: imageSearch });
         this.props.history.push(`/search/${imageSearch}?page=1`);
 
-        document.getElementById("searchPage__form").reset();
-        document.getElementById("mobileSearchBar__form").reset();
+        document.getElementById('searchPage__form').reset();
+        document.getElementById('mobileSearchBar__form').reset();
     }
 
     handleOpenModal = (imgUrl, height, width, user, views, likes) => {
@@ -61,18 +64,14 @@ class SearchPage extends Component {
         const imageSearched = this.props.match.params.image;
         const parsedPageQuery = queryString.parse(this.props.location.search);
 
-        if(direction === 'next') {
-            this.setState((prevState) => {
-                return {
+        if (direction === 'next') {
+            this.setState(prevState => ({
                     page: Number(prevState.page) + 1
-                }
-            });
+                }));
         } else if (direction === 'previous') {
-            this.setState((prevState) => {
-                return {
+            this.setState(prevState => ({
                     page: Number(prevState.page) - 1
-                }
-            });
+                }));
         }
 
         parsedPageQuery.page = this.state.page;
@@ -81,54 +80,95 @@ class SearchPage extends Component {
         window.scrollTo(0, 0);
     }
 
-    render(){
+    render() {
         return (
             <div className="searchPage">
-                <SearchHeader handleImageSearch={this.handleImageSearch}/>
-                <MobileSearchBar handleImageSearch={this.handleImageSearch}/>
+                <SearchHeader handleImageSearch={this.handleImageSearch} />
+                <MobileSearchBar handleImageSearch={this.handleImageSearch} />
                 <div className="tag">
                     <div className="tag__wrap">
-                        <p className="tag__title">Free images of { this.state.tag }</p>
+                        <p className="tag__title">
+                            Free images of
+                            {' '}
+                            { this.state.tag }
+                        </p>
                     </div>
                 </div>
                 {
-                    this.props.images.length > 0 ? 
-                    <ImageList 
-                        handleOpenModal={this.handleOpenModal}
-                        images={this.props.images}/> : <Spinner />
+                    this.props.images.length > 0 
+                    ? (
+                <ImageList 
+                  handleOpenModal={this.handleOpenModal}
+                  images={this.props.images}
+                />
+                ) : <Spinner />
                 }
                 {
                     this.props.modal.hidden 
-                    ? null : <ImageModal 
-                                {...this.props.modal}
-                                handleCloseModal={this.handleCloseModal}/>
+                    ? null : (
+                    <ImageModal 
+                      {...this.props.modal}
+                      handleCloseModal={this.handleCloseModal} 
+                    />
+                    )
                 }
                 <Pagination 
-                    handlePagination={this.handlePagination}
-                    page={this.state.page}
+                  handlePagination={this.handlePagination}
+                  page={this.state.page}
                 />
             </div>
         );
-    };
+    }
+}
+
+// # redux state
+const mapStateToProps = state => ({
+    images: state.home.images,
+    modal: state.home.modal
+});
+
+// # redux actions
+const mapDispatchToProps = dispatch => ({
+    setImagesAsync: (query, parsedPageQuery) => dispatch(setImagesAsync(query, parsedPageQuery)),
+    setImagesSearchedAsync: (query, parsedPageQuery) => dispatch(setImagesSearchedAsync(query, parsedPageQuery)),
+    setOpenModal: (imgUrl, height, width, user, views, likes) => dispatch(setOpenModal(imgUrl, height, width, user, views, likes)),
+    setCloseModal: () => dispatch(setCloseModal()),
+    setPaginationAsync: (query, parsedPageQuery) => dispatch(setPaginationAsync(query, parsedPageQuery))
+});
+
+SearchPage.propTypes = {
+    history: PropTypes.objectOf(PropTypes.any),
+    images: PropTypes.arrayOf(PropTypes.object),
+    location: PropTypes.objectOf(PropTypes.any),
+    match: PropTypes.objectOf(PropTypes.any),
+    modal: PropTypes.shape({
+        img: PropTypes.string,
+        height: PropTypes.number,
+        hidden: PropTypes.bool,
+        likes: PropTypes.number,
+        tags: PropTypes.string,
+        user: PropTypes.string,
+        views: PropTypes.number,
+        width: PropTypes.number
+    }),
+    setImagesAsync: PropTypes.func,
+    setImagesSearchedAsync: PropTypes.func,
+    setOpenModal: PropTypes.func,
+    setPaginationAsync: PropTypes.func,
+    setCloseModal: PropTypes.func
 };
 
-    // # redux state
-    const mapStateToProps = (state) => {
-        return {
-            images: state.home.images,
-            modal: state.home.modal
-        }
-    };
-
-    // # redux actions
-    const mapDispatchToProps = (dispatch) => {
-        return {
-            setImagesAsync: (query, parsedPageQuery) => dispatch(setImagesAsync(query, parsedPageQuery)),
-            setImagesSearchedAsync: (query, parsedPageQuery) => dispatch(setImagesSearchedAsync(query, parsedPageQuery)),
-            setOpenModal: (imgUrl, height, width, user, views, likes) => dispatch(setOpenModal(imgUrl, height, width, user, views, likes)),
-            setCloseModal: () => dispatch(setCloseModal()),
-            setPaginationAsync: (query, parsedPageQuery) => dispatch(setPaginationAsync(query, parsedPageQuery))
-        }
-    };
+SearchPage.defaultProps = {
+    history: {},
+    images: [],
+    location: {},
+    match: {},
+    modal: {},
+    setImagesAsync: () => {},
+    setImagesSearchedAsync: () => {},
+    setOpenModal: () => {},
+    setPaginationAsync: () => {},
+    setCloseModal: () => {}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);

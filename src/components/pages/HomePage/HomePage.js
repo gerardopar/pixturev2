@@ -78,6 +78,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 HomePage.propTypes = {
+    history: PropTypes.objectOf(PropTypes.any),
     images: PropTypes.arrayOf(PropTypes.object),
     modal: PropTypes.shape({
         img: PropTypes.string,
@@ -95,6 +96,7 @@ HomePage.propTypes = {
 };
 
 HomePage.defaultProps = {
+    history: {},
     images: [],
     modal: {},
     setImagesAsync: () => {},
