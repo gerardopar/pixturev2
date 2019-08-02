@@ -1,11 +1,14 @@
+// importing modules
 import React from 'react';
-import logo_img from '../../../../assets/img/photo-camera.svg';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
+
+// importing assets
+import logoImg from '../../../../assets/img/photo-camera.svg';
 
 const heroNav = () => (
     <div className="hero__nav">
         <div className="hero__nav--logo--wrap">
-            <img className="hero__nav--logo--img" src={logo_img} />
+            <img className="hero__nav--logo--img" src={logoImg} alt="hero logo" />
             <p className="hero__nav--logo">PIXTURE</p>
         </div>
         <div>

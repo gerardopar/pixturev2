@@ -1,28 +1,35 @@
 // importing modules
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
+import {
+ BrowserRouter, Route, Switch, Redirect 
+} from 'react-router-dom';
 
 // importing components
 import HomePage from '../components/pages/HomePage/HomePage';
 import SearchPage from '../components/pages/SearchPage/SearchPage';
 
 class AppRouter extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-
     }
-    render() {
 
-        let routes = (
+    render() {
+        const routes = (
             <Switch>   
-            <Route path="/" exact={true}
-                render={props => (
-                    <HomePage {...props}/>
-            )}/>
-            <Route path="/search/:image" exact={true}
-                render={props => (
-                    <SearchPage {...props}/>
-            )}/>
+            <Route
+              path="/"
+              exact
+              render={props => (
+                    <HomePage {...props} />
+            )}
+            />
+            <Route
+              path="/search/:image"
+              exact
+              render={props => (
+                    <SearchPage {...props} />
+            )}
+            />
             </Switch>
         );
 
@@ -33,7 +40,7 @@ class AppRouter extends Component {
             </div>
         </BrowserRouter>
         );
-    };
-};
+    }
+}
 
 export default AppRouter;

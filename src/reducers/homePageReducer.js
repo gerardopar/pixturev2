@@ -11,7 +11,7 @@ const homeDefaultState = {
         views: 0,
         width: 0
     }
-}
+};
 
 const homeReducer = (state = homeDefaultState, action) => {
     switch (action.type) {
@@ -19,7 +19,7 @@ const homeReducer = (state = homeDefaultState, action) => {
             return {
                 ...state,
                 images: [...action.images]
-            }
+            };
 
         case 'SET_OPEN_MODAL':
             return {
@@ -35,7 +35,7 @@ const homeReducer = (state = homeDefaultState, action) => {
                     views: action.views,
                     width: action.width
                 }
-            }
+            };
 
         case 'SET_CLOSE_MODAL':
             return {
@@ -44,7 +44,7 @@ const homeReducer = (state = homeDefaultState, action) => {
                     ...state,
                     hidden: true
                 }
-            }
+            };
         
         default:
         return state;

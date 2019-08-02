@@ -1,7 +1,7 @@
 // default reducer state:
 const searchPageDefaultState = {
     images: [],
-}
+};
 
 const searchPageReducer = (state = searchPageDefaultState, action) => {
     switch (action.type) {
@@ -9,19 +9,19 @@ const searchPageReducer = (state = searchPageDefaultState, action) => {
             return {
                 ...state,
                 images: [...action.images]
-            }
+            };
 
         case 'SET_IMAGES_SEARCHED':
             return {
                 ...state,
                 images: [...action.images]
-            }
+            };
 
         case 'SET_PAGINATION':
             return {
                 ...state,
                 images: [...action.images]
-            }
+            };
 
         case 'SET_OPEN_MODAL':
             return {
@@ -37,7 +37,7 @@ const searchPageReducer = (state = searchPageDefaultState, action) => {
                     views: action.views,
                     width: action.width
                 }
-            }
+            };
 
         case 'SET_CLOSE_MODAL':
             return {
@@ -46,7 +46,7 @@ const searchPageReducer = (state = searchPageDefaultState, action) => {
                     ...state,
                     hidden: true
                 }
-            }
+            };
         
         default:
         return state;

@@ -10,7 +10,6 @@ const TerserPlugin = require('terser-webpack-plugin'); // * minifies javascript
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-    mode: 'development', // sets the webpack mode
     entry: ['@babel/polyfill', './src/index.js'], // webpack entry point
     output: {
         filename: 'bundle.js', // webpack output file
@@ -21,26 +20,20 @@ module.exports = {
             { // # js loader 
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env'],
-                        plugins: ['@babel/plugin-proposal-object-rest-spread']
-                    }
-                }
+                use: ['babel-loader', 'eslint-loader']
             },
             { // # styles loader
-                test: /\.scss$/,  // tests for a sass file
+                test: /\.scss$/, // tests for a sass file
                 use: [
                     MiniCssExtractPlugin.loader, // compiles CSS into a seperate file
-                    { loader: "css-loader" }, // translates CSS into CommonJS
-                    { loader: "sass-loader" } // compiles Sass to CSS, using Node Sass by default
+                    { loader: 'css-loader' }, // translates CSS into CommonJS
+                    { loader: 'sass-loader' } // compiles Sass to CSS, using Node Sass by default
                     ]
             },
             { // # file loader
-                test: /\.(png|svg|jpg|gif)$/,  // tests for an img
+                test: /\.(png|svg|jpg|gif)$/, // tests for an img
                 use: [
-                    { loader: "file-loader" }
+                    { loader: 'file-loader' }
                 ]
             }
         ]
@@ -53,8 +46,8 @@ module.exports = {
     },
     plugins: [ // # plugins
         new MiniCssExtractPlugin({ // generates a css file
-            filename: "[name].css",
-            chunkFilename: "[id].css",
+            filename: '[name].css',
+            chunkFilename: '[id].css',
         })
     ],
     // # development
@@ -64,5 +57,5 @@ module.exports = {
         open: 'Google Chrome'
     },
     devtool: 'source-map', // source maps for debugging
-    mode : devMode ? 'development' : 'production' // webpack mode
+    mode: devMode ? 'development' : 'production' // webpack mode
 };
