@@ -7,7 +7,7 @@ describe('homePage redux actions', () => {
     });
 
     test('should return values for setting images', () => {
-        const result = setImages([], 'summer');
-        expect(result).toEqual({ type: 'SET_IMAGES', images: [], tag: 'summer' });
+        const result = setImages([{ url: 'https://imageTestUrl.com' }], 'summer');
+        expect(result).toEqual({ type: 'SET_IMAGES', images: [{ url: 'https://imageTestUrl.com' }], tag: 'summer' });
     });
 });

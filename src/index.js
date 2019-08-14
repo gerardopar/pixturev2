@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 // importing components
-import AppRouter from './routers/AppRouter';
+import App from './App/App';
 import configureStore from './store/configureStore';
 
 // importing style sheet
@@ -16,7 +16,7 @@ const store = configureStore();
 // redux store provider
 const jsx = (
     <Provider store={store}>
-        <AppRouter />
+        <App />
     </Provider>
 );
 
