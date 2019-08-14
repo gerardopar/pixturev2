@@ -1,6 +1,16 @@
 // default reducer state:
 const searchPageDefaultState = {
     images: [],
+    modal: {
+        img: '',
+        height: 0,
+        hidden: true,
+        likes: 0,
+        tags: '',
+        user: '',
+        views: 0,
+        width: 0
+    }
 };
 
 const searchPageReducer = (state = searchPageDefaultState, action) => {

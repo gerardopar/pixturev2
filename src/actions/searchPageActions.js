@@ -1,5 +1,5 @@
 // # sync action
-export const setImages = images => ({
+export const setImages = (images = []) => ({
     type: 'SET_IMAGES',
     images: [...images]
 });
@@ -22,7 +22,7 @@ export const setImagesAsync = (query, parsedPageQuery) => dispatch => fetch('htt
     .catch(err => console.log(err));
 
 // # sync action
-export const setImagesSearched = images => ({
+export const setImagesSearched = (images = []) => ({
     type: 'SET_IMAGES_SEARCHED',
     images: [...images]
 });
@@ -44,6 +44,11 @@ export const setImagesSearchedAsync = (query, parsedPageQuery) => dispatch => fe
     })
     .catch(err => console.log(err));
 
+export const setPagination = (images = []) => ({
+    type: 'SET_PAGINATION',
+    images: [...images]
+});
+
 export const setPaginationAsync = (query, parsedPageQuery) => dispatch => fetch('https://pixture.herokuapp.com/postImageQuery', {
         method: 'POST',
         headers: {
@@ -60,13 +65,16 @@ export const setPaginationAsync = (query, parsedPageQuery) => dispatch => fetch(
     })
     .catch(err => console.log(err));
 
-export const setPagination = images => ({
-        type: 'SET_PAGINATION',
-        images: [...images]
-    });
 
 // # sync action
-export const setOpenModal = (imgUrl, height, width, user, views, likes) => ({
+export const setOpenModal = (
+    imgUrl = 0, 
+    height = 0, 
+    width = 0, 
+    user = '', 
+    views = 0, 
+    likes = 0
+) => ({
         type: 'SET_OPEN_MODAL',
         imgUrl,
         height,
@@ -78,5 +86,5 @@ export const setOpenModal = (imgUrl, height, width, user, views, likes) => ({
 
 // # sync action
 export const setCloseModal = () => ({
-        type: 'SET_CLOSE_MODAL',
-    });
+    type: 'SET_CLOSE_MODAL',
+});

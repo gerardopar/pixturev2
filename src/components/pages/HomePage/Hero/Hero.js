@@ -7,7 +7,7 @@ import HeroTitle from './HeroTitle';
 import HeroSearchBar from './HeroSearchBar';
 // importing assets
 // importing assets 
-import defaultBk from '../../../../assets/img/default_bk.jpg';
+import defaultBk from '../../../../assets/img/bk.jpg';
 
 const hero = props => (
     <div

@@ -11,14 +11,6 @@ const heroNav = () => (
             <img className="hero__nav--logo--img" src={logoImg} alt="hero logo" />
             <p className="hero__nav--logo">PIXTURE</p>
         </div>
-        <div>
-            {
-                /*
-                <NavLink to="/" className="hero__nav--login">LOGIN</NavLink>
-                <NavLink to="/" className="hero__nav--signup">JOIN FREE</NavLink>
-                */
-            }
-        </div>
     </div>
 );
 

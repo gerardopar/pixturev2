@@ -24,10 +24,6 @@ const searchHeader = props => (
                 />
                 <button type="submit" className="material-icons searchPage__form--btn">search</button>
             </form>
-            {/* 
-                <NavLink to="/" className="searchPage__login">LOGIN</NavLink>
-                <NavLink to="/" className="searchPage__signup">JOIN FREE</NavLink>
-            */}
         </div>
     </div>
 );

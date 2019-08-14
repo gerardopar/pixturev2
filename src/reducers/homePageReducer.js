@@ -6,11 +6,11 @@ const homeDefaultState = {
         height: 0,
         hidden: true,
         likes: 0,
-        tags: '',
         user: '',
         views: 0,
         width: 0
-    }
+    },
+    tag: ''
 };
 
 const homeReducer = (state = homeDefaultState, action) => {
@@ -18,22 +18,17 @@ const homeReducer = (state = homeDefaultState, action) => {
         case 'SET_IMAGES':
             return {
                 ...state,
-                images: [...action.images]
+                images: action.images,
+                ...action.tag
             };
 
         case 'SET_OPEN_MODAL':
             return {
                 ...state,
                 modal: {
-                    ...state,
-                    img: action.imgUrl,
-                    height: action.height,
-                    hidden: action.hidden,
-                    likes: action.likes,
-                    tags: action.tags,
-                    user: action.user,
-                    views: action.views,
-                    width: action.width
+                    ...state.modal,
+                    ...action.modal,
+                    hidden: false
                 }
             };
 
@@ -41,7 +36,7 @@ const homeReducer = (state = homeDefaultState, action) => {
             return {
                 ...state,
                 modal: {
-                    ...state,
+                    ...state.modal,
                     hidden: true
                 }
             };

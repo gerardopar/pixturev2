@@ -4,7 +4,7 @@
         "es6": true,
         "node": true
     },
-    "extends": "airbnb",
+    "extends": ["airbnb", "plugin:jest/recommended"],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -18,7 +18,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "jest"
     ],
     "rules": {
         "comma-dangle": "off",

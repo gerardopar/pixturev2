@@ -7,17 +7,12 @@ import { withRouter } from 'react-router-dom';
 import { setImagesAsync, setOpenModal, setCloseModal } from '../../../actions/homePageActions';
 // importing components
 import Hero from './Hero/Hero';
+import CategoryTag from '../../UI/CategoryTag/CategoryTag';
 import ImageList from '../../UI/ImageList/ImageList';
 import ImageModal from '../../UI/ImageModal/ImageModal';
 import Spinner from '../../UI/spinner/Spinner';
 
 class HomePage extends Component {
-    constructor(props) {
-        super(props);
-        
-        this.state = {};
-    }
-
     componentWillMount() {
         this.props.setImagesAsync();
     }
@@ -28,8 +23,16 @@ class HomePage extends Component {
         this.props.history.push(`/search/${imageSearch}?page=1`);
     }
 
-    handleOpenModal = (imgUrl, height, width, user, views, likes) => {
-        this.props.setOpenModal(imgUrl, height, width, user, views, likes);
+    handleOpenModal = (img, height, width, user, views, likes) => {
+        const modalValues = {
+            img, 
+            height, 
+            width, 
+            user, 
+            views, 
+            likes
+        };
+        this.props.setOpenModal(modalValues);
     }
 
     handleCloseModal = () => {
@@ -40,6 +43,7 @@ class HomePage extends Component {
         return (
             <div>
                 <Hero handleImageSearch={this.handleImageSearch} />
+                <CategoryTag tag={this.props.tag} />
                 {
                     this.props.images.length > 0 
                     ? (
@@ -67,7 +71,8 @@ class HomePage extends Component {
 // # redux state
 const mapStateToProps = state => ({
     images: state.home.images,
-    modal: state.home.modal
+    modal: state.home.modal,
+    tag: state.home.tag
 });
     
 // # redux actions
@@ -90,6 +95,7 @@ HomePage.propTypes = {
         views: PropTypes.number,
         width: PropTypes.number
     }),
+    tag: PropTypes.string,
     setImagesAsync: PropTypes.func,
     setOpenModal: PropTypes.func,
     setCloseModal: PropTypes.func,
@@ -99,6 +105,7 @@ HomePage.defaultProps = {
     history: {},
     images: [],
     modal: {},
+    tag: '',
     setImagesAsync: () => {},
     setOpenModal: () => {},
     setCloseModal: () => {},

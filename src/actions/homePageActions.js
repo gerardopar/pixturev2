@@ -1,30 +1,29 @@
 // # sync action
-export const setImages = images => ({
+export const setImages = (images, tag) => ({
     type: 'SET_IMAGES',
-    images: [...images]
+    images,
+    tag
 });
 
 export const setImagesAsync = () => dispatch => fetch('https://pixture.herokuapp.com/getPopularImages', {
-            method: 'GET'
-        })
-        .then(data => data.json())
-        .then((data) => {
-            dispatch(setImages([...data.images]));
-        })
-        .catch(err => console.log(err));
+    method: 'GET'
+})
+.then(data => data.json())
+.then((data) => {
+    const tag = {
+        tag: data.trend
+    };
+    dispatch(setImages([...data.images], tag));
+})
+.catch(err => console.log(err));
 
 // # sync action
-export const setOpenModal = (imgUrl, height, width, user, views, likes) => ({
+export const setOpenModal = (modal = {}) => ({
         type: 'SET_OPEN_MODAL',
-        imgUrl,
-        height,
-        width,
-        user,
-        views,
-        likes
-    });
+        modal
+});
 
 // # sync action
 export const setCloseModal = () => ({
-        type: 'SET_CLOSE_MODAL',
+    type: 'SET_CLOSE_MODAL',
 });

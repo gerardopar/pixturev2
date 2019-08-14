@@ -11,6 +11,7 @@ import {
 
 // importing components
 import SearchHeader from './SearchHeader/SearchHeader';
+import CategoryTag from '../../UI/CategoryTag/CategoryTag';
 import ImageList from '../../UI/ImageList/ImageList';
 import ImageModal from '../../UI/ImageModal/ImageModal';
 import Pagination from '../../UI/pagination/Pagination';
@@ -85,15 +86,7 @@ class SearchPage extends Component {
             <div className="searchPage">
                 <SearchHeader handleImageSearch={this.handleImageSearch} />
                 <MobileSearchBar handleImageSearch={this.handleImageSearch} />
-                <div className="tag">
-                    <div className="tag__wrap">
-                        <p className="tag__title">
-                            Free images of
-                            {' '}
-                            { this.state.tag }
-                        </p>
-                    </div>
-                </div>
+                <CategoryTag tag={this.state.tag} />
                 {
                     this.props.images.length > 0 
                     ? (
@@ -103,6 +96,7 @@ class SearchPage extends Component {
                 />
                 ) : <Spinner />
                 }
+
                 {
                     this.props.modal.hidden 
                     ? null : (
@@ -112,6 +106,7 @@ class SearchPage extends Component {
                     />
                     )
                 }
+                
                 <Pagination 
                   handlePagination={this.handlePagination}
                   page={this.state.page}
