@@ -53,8 +53,16 @@ class SearchPage extends Component {
         document.getElementById('mobileSearchBar__form').reset();
     }
 
-    handleOpenModal = (imgUrl, height, width, user, views, likes) => {
-        this.props.setOpenModal(imgUrl, height, width, user, views, likes);
+    handleOpenModal = (img, height, width, user, views, likes) => {
+        const modalValues = {
+            img, 
+            height, 
+            width, 
+            user, 
+            views, 
+            likes
+        };
+        this.props.setOpenModal(modalValues);
     }
 
     handleCloseModal = () => {

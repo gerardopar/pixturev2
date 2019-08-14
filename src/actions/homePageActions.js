@@ -1,7 +1,6 @@
-// # sync action
-export const setImages = (images, tag) => ({
+export const setImages = (images = [], tag = '') => ({
     type: 'SET_IMAGES',
-    images,
+    images: [...images],
     tag
 });
 
@@ -19,8 +18,8 @@ export const setImagesAsync = () => dispatch => fetch('https://pixture.herokuapp
 
 // # sync action
 export const setOpenModal = (modal = {}) => ({
-        type: 'SET_OPEN_MODAL',
-        modal
+    type: 'SET_OPEN_MODAL',
+    modal
 });
 
 // # sync action

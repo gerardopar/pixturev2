@@ -41,7 +41,7 @@ describe('redux actions', () => {
     
     test('should return default values for setting images', () => {
         const result = setImages();
-        expect(result).toEqual({ type: 'SET_IMAGES', images: undefined, tag: undefined });
+        expect(result).toEqual({ type: 'SET_IMAGES', images: [], tag: '' });
     });
 
     test('should return values for setting images', () => {
