@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 // importing redux actions
-import { setImagesAsync, setOpenModal, setCloseModal } from '../../../actions/homePageActions';
+import { setImagesAsync } from '../../../actions/homePageActions';
+import { setOpenModal, setCloseModal } from '../../../actions/modalActions';
 // importing components
 import Hero from './Hero/Hero';
 import CategoryTag from '../../UI/CategoryTag/CategoryTag';
@@ -71,7 +72,7 @@ class HomePage extends Component {
 // # redux state
 const mapStateToProps = state => ({
     images: state.home.images,
-    modal: state.home.modal,
+    modal: state.modal.modal,
     tag: state.home.tag
 });
     

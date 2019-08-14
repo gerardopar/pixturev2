@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 import queryString from 'query-string';
 // importing redux actions
 import {
- setImagesAsync, setOpenModal, 
-        setCloseModal, setImagesSearchedAsync, setPaginationAsync 
+ setImagesAsync, setImagesSearchedAsync, setPaginationAsync 
 } from '../../../actions/searchPageActions';
+import { setOpenModal, setCloseModal } from '../../../actions/modalActions';
 
 // importing components
 import SearchHeader from './SearchHeader/SearchHeader';
@@ -127,7 +127,7 @@ class SearchPage extends Component {
 // # redux state
 const mapStateToProps = state => ({
     images: state.home.images,
-    modal: state.home.modal
+    modal: state.modal.modal
 });
 
 // # redux actions

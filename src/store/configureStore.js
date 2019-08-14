@@ -7,6 +7,7 @@ import thunk from 'redux-thunk';
 // importing reducer
 import homePageReducer from '../reducers/homePageReducer';
 import searchPageReducer from '../reducers/searchPageReducer';
+import modalReducer from '../reducers/modalReducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -14,7 +15,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 export default () => {
     const store = createStore(combineReducers({
         home: homePageReducer,
-        searchPage: searchPageReducer
+        searchPage: searchPageReducer,
+        modal: modalReducer
         }),
         composeEnhancers(applyMiddleware(thunk)));
 
