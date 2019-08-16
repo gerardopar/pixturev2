@@ -18,7 +18,7 @@ import Pagination from '../../UI/pagination/Pagination';
 import MobileSearchBar from '../../UI/mobile/MobileSearchBar';
 import Spinner from '../../UI/spinner/Spinner';
 
-class SearchPage extends Component {
+export class SearchPage extends Component {
     constructor(props) {
         super(props);
         this.state = {

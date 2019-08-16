@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders SearchPage with expected props renders SearchPage with no props 1`] = `
+"<div className=\\"searchPage\\">
+  <searchHeader handleImageSearch={[Function]} />
+  <mobileSearchBar handleImageSearch={[Function]} />
+  <categoryTag tag=\\"\\" />
+  <spinner />
+  <imageModal handleCloseModal={[Function]} height={0} img=\\"\\" likes={0} user=\\"\\" views={0} width={0} />
+  <pagination handlePagination={[Function]} page={1} />
+</div>"
+`;
+
+exports[`renders SearchPage with expected props renders image modal with expected props 1`] = `
+"<div className=\\"searchPage\\">
+  <searchHeader handleImageSearch={[Function]} />
+  <mobileSearchBar handleImageSearch={[Function]} />
+  <categoryTag tag=\\"\\" />
+  <spinner />
+  <imageModal img=\\"https://imageTesturl.com\\" height={100} hidden={false} likes={1000} user=\\"http://userTesturl.coom\\" views={500} width={200} handleCloseModal={[Function]} />
+  <pagination handlePagination={[Function]} page={1} />
+</div>"
+`;
+
+exports[`renders SearchPage with expected props renders imageList with expected props  1`] = `
+"<div className=\\"searchPage\\">
+  <searchHeader handleImageSearch={[Function]} />
+  <mobileSearchBar handleImageSearch={[Function]} />
+  <categoryTag tag=\\"\\" />
+  <imageList handleOpenModal={[Function]} images={{...}} />
+  <imageModal handleCloseModal={[Function]} height={0} img=\\"\\" likes={0} user=\\"\\" views={0} width={0} />
+  <pagination handlePagination={[Function]} page={1} />
+</div>"
+`;

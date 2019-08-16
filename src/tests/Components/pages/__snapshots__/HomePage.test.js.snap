@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`homePage props renders category tag with expected props  1`] = `
+"<div data-test=\\"component-homepage\\">
+  <hero handleImageSearch={[Function]} />
+  <categoryTag tag=\\"summer\\" />
+  <spinner />
+  <imageModal handleCloseModal={[Function]} height={0} img=\\"\\" likes={0} user=\\"\\" views={0} width={0} />
+</div>"
+`;
+
+exports[`homePage props renders homePage component with no props 1`] = `
+"<div data-test=\\"component-homepage\\">
+  <hero handleImageSearch={[Function]} />
+  <categoryTag tag=\\"\\" />
+  <spinner />
+  <imageModal handleCloseModal={[Function]} height={0} img=\\"\\" likes={0} user=\\"\\" views={0} width={0} />
+</div>"
+`;
+
+exports[`homePage props renders image modal with expected props 1`] = `
+"<div data-test=\\"component-homepage\\">
+  <hero handleImageSearch={[Function]} />
+  <categoryTag tag=\\"\\" />
+  <spinner />
+  <imageModal img=\\"https://imageTesturl.com\\" height={100} hidden={false} likes={1000} user=\\"http://userTesturl.coom\\" views={500} width={200} handleCloseModal={[Function]} />
+</div>"
+`;
+
+exports[`homePage props renders imageList with expected props  1`] = `
+"<div data-test=\\"component-homepage\\">
+  <hero handleImageSearch={[Function]} />
+  <categoryTag tag=\\"\\" />
+  <imageList handleOpenModal={[Function]} images={{...}} />
+  <imageModal handleCloseModal={[Function]} height={0} img=\\"\\" likes={0} user=\\"\\" views={0} width={0} />
+</div>"
+`;

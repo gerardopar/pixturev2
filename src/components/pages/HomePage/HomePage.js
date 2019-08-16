@@ -13,7 +13,7 @@ import ImageList from '../../UI/ImageList/ImageList';
 import ImageModal from '../../UI/ImageModal/ImageModal';
 import Spinner from '../../UI/spinner/Spinner';
 
-class HomePage extends Component {
+export class HomePage extends Component { // # exporting unconnected HomePage component
     componentWillMount() {
         this.props.setImagesAsync();
     }
@@ -42,7 +42,7 @@ class HomePage extends Component {
 
     render() {
         return (
-            <div>
+            <div data-test="component-homepage">
                 <Hero handleImageSearch={this.handleImageSearch} />
                 <CategoryTag tag={this.props.tag} />
                 {
