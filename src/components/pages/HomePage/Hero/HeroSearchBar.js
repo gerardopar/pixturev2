@@ -20,10 +20,10 @@ const heroSearchBar = props => (
             <div className="hero__suggest--wrap">
                 <p className="hero__suggest">
                     Suggested:
-                        <NavLink className="hero__suggest--link" to="/search/summer?page=1"> summer</NavLink>
-                        <NavLink className="hero__suggest--link" to="/search/ocean?page=1"> ocean</NavLink>
+                        <NavLink className="hero__suggest--link" to="/search/winter?page=1"> winter</NavLink>
+                        <NavLink className="hero__suggest--link" to="/search/christmas?page=1"> christmas</NavLink>
                         <NavLink className="hero__suggest--link" to="/search/nature?page=1"> nature</NavLink>
-                        <NavLink className="hero__suggest--link" to="/search/car?page=1"> car</NavLink>
+                        <NavLink className="hero__suggest--link" to="/search/snow?page=1"> snow</NavLink>
                         <NavLink className="hero__suggest--link" to="/search/travel?page=1"> travel</NavLink>
                         <NavLink className="hero__suggest--link" to="/search/family?page=1"> family</NavLink>
                 </p>
